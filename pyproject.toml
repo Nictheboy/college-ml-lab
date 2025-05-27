@@ -1,0 +1,17 @@
+[project]
+name = "ml-query-preprocessor"
+version = "0.1.0"
+description = "Script to preprocess query plan data for a machine learning project."
+authors = [
+    { name = "Your Name", email = "you@example.com" },
+]
+requires-python = ">=3.8"
+dependencies = [
+    # No external dependencies needed for this specific script
+    # If you add libraries like pandas, add them here:
+    # "pandas>=1.0",
+]
+
+[tool.uv]
+# No specific uv configurations needed for this simple case.
+# uv will use the [project] section.
