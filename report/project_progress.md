@@ -123,3 +123,203 @@ MSLE = (1/n) * Σ(log(1 + y_pred) - log(1 + y_true))²
 - 相比基线模型：验证集MSLE从2.410降到0.775，改进67.84%
 - 相比XGBoost V1：验证集MSLE从1.396降到0.775，改进44.50%
 - 特征数量从36增加到78，带来了显著的性能提升
+
+
+## 模型性能摘要
+### 1. XGBoost V3 (Robust Features)
+- 特征数量: 86
+- 训练集 MSLE: 0.398373
+- 验证集 MSLE: 0.766269
+- 训练时间: 2.17 秒
+- 最佳迭代: 472
+
+### 2. XGBoost V2 (Advanced Features)
+- 特征数量: 78
+- 训练集 MSLE: 0.385781
+- 验证集 MSLE: 0.774980
+- 训练时间: 1.31 秒
+- 最佳迭代: 306
+
+### 3. xgboost
+- 特征数量: N/A
+- 训练集 MSLE: 1.094386
+- 验证集 MSLE: 1.396434
+- 训练时间: 0.40 秒
+- 最佳迭代: 133
+
+### 4. Random Forest
+- 特征数量: N/A
+- 训练集 MSLE: 1.199765
+- 验证集 MSLE: 1.427542
+- 训练时间: 0.35 秒
+
+### 5. baseline_plan_rows
+- 特征数量: N/A
+- 训练集 MSLE: 2.410165
+- 验证集 MSLE: N/A
+
+## 结论
+**最佳机器学习模型**: XGBoost V3 (Robust Features) (验证集 MSLE: 0.766269)
+与基线模型 (训练集 MSLE: 2.410165) 相比，性能提升 **68.21%**
+
+### 特征工程影响 (XGBoost 模型对比):
+- XGBoost V1 (N/A 特征): 验证集 MSLE = 1.396434
+- XGBoost V2 (78 特征): 验证集 MSLE = 0.774980
+- XGBoost V3 (86 特征): 验证集 MSLE = 0.766269
+  - 从 V1 到 V2 (高级特征): **改进 44.50%**
+  - 从 V2 到 V3 (鲁棒特征): **改进 1.12%**
+  - 从 V1 到 V3 总改进: **45.13%**
+
+**推荐模型**: XGBoost V3 (Robust Features)
+请将 `data/predictions_xgboost_v3.json` 复制为 `data/predictions.json` 并运行 `13_convert_to_csv.py` 以生成提交文件。
+
+
+## 模型性能摘要
+### 1. XGBoost V1 (Basic Features)
+- 特征数量: 36
+- 训练集 MSLE: 1.094386
+- 验证集 MSLE: 1.396434
+- 训练时间: 0.40 秒
+- 最佳迭代: 133
+
+### 2. Baseline (Plan Rows)
+- 特征数量: 1
+- 训练集 MSLE: 2.410165
+- 验证集 MSLE: N/A (基线模型使用训练集MSLE: 2.410165)
+
+## 结论
+**最佳机器学习模型**: XGBoost V1 (Basic Features) (验证集 MSLE: 1.396434)
+与基线模型 (训练集 MSLE: 2.410165) 相比，性能提升 **42.06%**
+
+**推荐模型**: XGBoost V1 (Basic Features)
+请将 `data/predictions_xgb.json` 复制为 `data/predictions.json` 并运行 `13_convert_to_csv.py` 以生成提交文件。
+
+
+## 模型性能摘要
+### 1. XGBoost V1 (Basic Features)
+- 特征数量: 36
+- 训练集 MSLE: 1.094386
+- 验证集 MSLE: 1.396434
+- 训练时间: 0.40 秒
+- 最佳迭代: 133
+
+### 2. Baseline (Plan Rows)
+- 特征数量: 1
+- 训练集 MSLE: 2.410165
+- 验证集 MSLE: N/A (基线模型使用训练集MSLE: 2.410165)
+
+## 结论
+**最佳机器学习模型**: XGBoost V1 (Basic Features) (验证集 MSLE: 1.396434)
+与基线模型 (训练集 MSLE: 2.410165) 相比，性能提升 **42.06%**
+
+**推荐模型**: XGBoost V1 (Basic Features)
+请将 `data/predictions_xgb.json` 复制为 `data/predictions.json` 并运行 `13_convert_to_csv.py` 以生成提交文件。
+
+
+## 模型性能摘要
+### 1. XGBoost V3 (Robust Features)
+- 特征数量: 86
+- 训练集 MSLE: 0.398373
+- 验证集 MSLE: 0.766269
+- 训练时间: 2.17 秒
+- 最佳迭代: 472
+
+### 2. XGBoost V2 (Advanced Features)
+- 特征数量: 78
+- 训练集 MSLE: 0.385781
+- 验证集 MSLE: 0.774980
+- 训练时间: 1.31 秒
+- 最佳迭代: 306
+
+### 3. XGBoost V1 (Basic Features)
+- 特征数量: 36
+- 训练集 MSLE: 1.094386
+- 验证集 MSLE: 1.396434
+- 训练时间: 0.40 秒
+- 最佳迭代: 133
+
+### 4. Random Forest
+- 特征数量: 36
+- 训练集 MSLE: 1.199765
+- 验证集 MSLE: 1.427542
+- 训练时间: 0.35 秒
+
+### 5. Baseline (Plan Rows)
+- 特征数量: 1
+- 训练集 MSLE: 2.410165
+- 验证集 MSLE: N/A (基线模型使用训练集MSLE: 2.410165)
+
+## 结论
+**最佳机器学习模型**: XGBoost V3 (Robust Features) (验证集 MSLE: 0.766269)
+与基线模型 (训练集 MSLE: 2.410165) 相比，性能提升 **68.21%**
+
+### 特征工程影响 (XGBoost 模型对比):
+- XGBoost V1 (Basic Features) (36 特征): 验证集 MSLE = 1.396434
+- XGBoost V2 (Advanced Features) (78 特征): 验证集 MSLE = 0.774980
+- XGBoost V3 (Robust Features) (86 特征): 验证集 MSLE = 0.766269
+  - 从 V1 到 V2 (高级特征): **改进 44.50%**
+  - 从 V2 到 V3 (鲁棒特征): **改进 1.12%**
+  - 从 V1 到 V3 总改进: **改进 45.13%**
+
+**推荐模型**: XGBoost V3 (Robust Features)
+请将 `data/predictions_xgb_v3.json` 复制为 `data/predictions.json` 并运行 `13_convert_to_csv.py` 以生成提交文件。
+
+## 模型比较
+
+| 模型                     | 特征数量 | 验证集 MSLE | 训练集 MSLE | 备注                       |
+|--------------------------|----------|-------------|-------------|----------------------------|
+| XGBoost V3 (Robust Features) | 86       | 0.766269    | 0.398373    | 鲁棒特征 (86)                  |
+| XGBoost V2 (Advanced Features) | 78       | 0.774980    | 0.385781    | 高级特征 (78)                  |
+| XGBoost V1 (Basic Features) | 36       | 1.396434    | 1.094386    | 基础特征 (36)                  |
+| Random Forest            | 36       | 1.427542    | 1.199765    | 基础特征 (36)                  |
+| Baseline (Plan Rows)     | 1        | N/A         | 2.410165    | 使用执行计划行数作为预测               |
+
+
+# 项目最终总结与模型推荐
+## 模型性能摘要
+### 1. XGBoost V3 (Robust Features)
+- 特征数量: 86
+- 训练集 MSLE: 0.398373
+- 验证集 MSLE: 0.766269
+- 训练时间: 2.17 秒
+- 最佳迭代: 472
+
+### 2. XGBoost V2 (Advanced Features)
+- 特征数量: 78
+- 训练集 MSLE: 0.385781
+- 验证集 MSLE: 0.774980
+- 训练时间: 1.31 秒
+- 最佳迭代: 306
+
+### 3. XGBoost V1 (Basic Features)
+- 特征数量: 36
+- 训练集 MSLE: 1.094386
+- 验证集 MSLE: 1.396434
+- 训练时间: 0.40 秒
+- 最佳迭代: 133
+
+### 4. Random Forest
+- 特征数量: 36
+- 训练集 MSLE: 1.199765
+- 验证集 MSLE: 1.427542
+- 训练时间: 0.35 秒
+
+### 5. Baseline (Plan Rows)
+- 特征数量: 1
+- 训练集 MSLE: 2.410165
+- 验证集 MSLE: N/A (基线模型使用训练集MSLE: 2.410165)
+
+## 结论
+**最佳机器学习模型**: XGBoost V3 (Robust Features) (验证集 MSLE: 0.766269)
+与基线模型 (训练集 MSLE: 2.410165) 相比，性能提升 **68.21%**
+
+### 特征工程影响 (XGBoost 模型对比):
+- XGBoost V1 (Basic Features) (36 特征): 验证集 MSLE = 1.396434
+- XGBoost V2 (Advanced Features) (78 特征): 验证集 MSLE = 0.774980
+- XGBoost V3 (Robust Features) (86 特征): 验证集 MSLE = 0.766269
+  - 从 V1 到 V2 (高级特征): **改进 44.50%**
+  - 从 V2 到 V3 (鲁棒特征): **改进 1.12%**
+  - 从 V1 到 V3 总改进: **改进 45.13%**
+
+**推荐模型**: XGBoost V3 (Robust Features)
+请将 `data/predictions_xgb_v3.json` 复制为 `data/predictions.json` 并运行 `13_convert_to_csv.py` 以生成提交文件。
